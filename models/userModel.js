@@ -4,7 +4,11 @@ const mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost:27017/e_shop");
 
 const userSchema = mongoose.Schema({
-  fullName: String,
+  fullName: {
+    type: String,
+    trim: true,
+    minLength: 3,
+  },
   email: String,
   password: String,
   cart: {
