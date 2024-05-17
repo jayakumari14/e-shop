@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 
 mongoose.connect("mongodb://localhost:27017/e_shop");
 
-mongoose.Schema({
+const userSchema = mongoose.Schema({
   fullName: String,
   email: String,
   password: String,
@@ -19,3 +19,5 @@ mongoose.Schema({
   contact: Number,
   picture: String,
 });
+
+module.exports = mongoose.model("user", userSchema);
