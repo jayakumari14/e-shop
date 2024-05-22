@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
+const config = require("config");
 mongoose
-  .connect("mongodb://localhost:27017/e_shop")
+  .connect(`${config.get("DATABASR_URI")}/e-shop`)
   .then(() => {
     console.log("connected");
   })
